@@ -1,3 +1,3 @@
 # Online Alarm Update
 
-I bit my cell phone and dropped it. But I needed an online alarm to go to work the next day.
+나는 핸드폰을 물에 빠트렸다. 그리고 다음날 출근을 위해 온라인 알람이 필요했다.
