@@ -17,7 +17,7 @@
     <section id="selectClock">
       <span>알람이 울릴 시간 설정</span>
       <article>
-        <select name="alrams-hours" id="alram-hours">
+        <select name="alramsHours" id="alramHours">
           <option value="00">00</option>
           <option value="01">01</option>
           <option value="02">02</option>
@@ -44,7 +44,7 @@
           <option value="23">23</option>
         </select>
         <span>:</span>
-        <select name="alrams-minutes" id="alram-minutes">
+        <select name="alramsMinutes" id="alramMinutes">
           <option value="00">00</option>
           <option value="01">01</option>
           <option value="02">02</option>
@@ -109,16 +109,18 @@
       </article>
     </section>
 
+    <audio class="audio" src="HYP-Drama.mp3" controls></audio>
+
     <section id="selectSound">
-      <label for="alram-select">알람 소리 선택</label>
-      <select name="alrams" id="alram-select">
-        <option value="알람1">알람1</option>
-        <option value="알람2">알람2</option>
-        <option value="알람3">알람3</option>
+      <label for="alramSelect">알람 소리 선택</label>
+      <select name="alrams" id="alramSelect">
+        <option value="HYP-Drama.mp3" selected>알람1</option>
+        <option value="HYP-LoveDay.mp3">알람2</option>
+        <option value="HYP-WithMe.mp3">알람3</option>
       </select>
       <div>
-        <button><i class="fas fa-play-circle"></i></button>
-        <button><i class="fas fa-stop-circle"></i></button>
+        <button id="play"><i class="fas fa-play-circle"></i></button>
+        <button id="stop"><i class="fas fa-stop-circle"></i></button>
       </div>
     </section>
 
@@ -130,5 +132,6 @@
     ></script>
     <script src="js/clock.js"></script>
     <script src="js/calendar.js"></script>
+    <script src="js/alramSoundSelect.js"></script>
   </body>
 </html>
