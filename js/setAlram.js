@@ -70,7 +70,6 @@ function alramTimer() {
   timer = setInterval(() => {
     if (remainingTimeSec <= 0) {
       setAudio.play();
-      clearInterval(timer);
     }
     updateTimerText(--remainingTimeSec);
   }, 1000);
