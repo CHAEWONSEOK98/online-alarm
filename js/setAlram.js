@@ -31,37 +31,39 @@ function alramTimer() {
   const getDate = new Date();
   let getHours = getDate.getHours();
   let getMinutes = getDate.getMinutes();
+
   if (getHours <= alramHoursValue) {
     if (getMinutes <= alramMinutesValue) {
       getHours = String(
-        Math.abs(getDate.getHours() - alramHoursValue)
+        Math.abs(parseInt(alramHoursValue) - getDate.getHours())
       ).padStart(2, "0");
       getMinutes = String(
-        Math.abs(getDate.getMinutes() - alramMinutesValue)
+        Math.abs(parseInt(alramMinutesValue) - getDate.getMinutes())
       ).padStart(2, "0");
-    } else {
+    } else if (getMinutes > alramMinutesValue) {
       getHours = String(
-        Math.abs(getDate.getHours() - (alramHoursValue - 1))
+        Math.abs(getDate.getHours() - parseInt(alramHoursValue - 1))
       ).padStart(2, "0");
       getMinutes = String(
-        Math.abs(getDate.getMinutes() - (alramMinutesValue + 60))
+        Math.abs(getDate.getMinutes() - parseInt(alramMinutesValue + 60))
       ).padStart(2, "0");
     }
   }
+
   if (getHours > alramHoursValue) {
     if (getMinutes > alramMinutesValue) {
       getHours = String(
-        Math.abs(getDate.getHours() - (parseInt(alramHoursValue) + 23))
+        Math.abs(23 - (getDate.getHours() - parseInt(alramHoursValue)))
       ).padStart(2, "0");
       getMinutes = String(
-        Math.abs(getDate.getMinutes() - (alramMinutesValue + 60))
+        Math.abs(getDate.getMinutes() - parseInt(alramMinutesValue + 60))
       ).padStart(2, "0");
-    } else {
+    } else if (getMinutes <= alramMinutesValue) {
       getHours = String(
-        Math.abs(getDate.getHours() - (parseInt(alramHoursValue) + 24))
+        Math.abs(24 - (getDate.getHours() - parseInt(alramHoursValue)))
       ).padStart(2, "0");
       getMinutes = String(
-        Math.abs(getDate.getMinutes() - alramMinutesValue)
+        Math.abs(getDate.getMinutes() - parseInt(alramMinutesValue))
       ).padStart(2, "0");
     }
   }
